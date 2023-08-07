@@ -1,0 +1,113 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --quiet assemble --no-version-check --depfile F:\ALL LATEST PROJECT\bmms\build\app\intermediates\flutter\debug/flutter_build.d --output F:\ALL LATEST PROJECT\bmms\build\app\intermediates\flutter\debug -dTargetFile=F:\ALL LATEST PROJECT\bmms\lib\main.dart -dTargetPlatform=android -dBuildMode=debug -dTrackWidgetCreation=true --DartDefines=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9iNGZiMTEyMTRkZDJkZGE2Y2UwMTJkZDk4ZWE0OThlOWU4YjkxMjYyLw== debug_android_application
+
+## exception
+
+NoSuchMethodError: NoSuchMethodError: No constructor '' declared in class 'null'.
+Receiver: null
+Tried calling: new ()
+
+```
+#0      NoSuchMethodError._throwNew (dart:core-patch/errors_patch.dart:191:5)
+#1      EagerSpanScanner.state (package:string_scanner/src/eager_span_scanner.dart:28:7)
+#2      Scanner._scanPlainScalar (package:yaml/src/scanner.dart:1486:22)
+#3      Scanner._fetchPlainScalar (package:yaml/src/scanner.dart:791:17)
+#4      Scanner._fetchNextToken (package:yaml/src/scanner.dart:475:9)
+#5      Scanner._fetchMoreTokens (package:yaml/src/scanner.dart:351:7)
+#6      Scanner.peek (package:yaml/src/scanner.dart:329:27)
+#7      Parser._parseBlockMappingKey (package:yaml/src/parser.dart:426:26)
+#8      Parser._stateMachine (package:yaml/src/parser.dart:100:16)
+#9      Parser.parse (package:yaml/src/parser.dart:61:19)
+#10     Loader._loadMapping (package:yaml/src/loader.dart:175:23)
+#11     Loader._loadNode (package:yaml/src/loader.dart:92:16)
+#12     Loader._loadDocument (package:yaml/src/loader.dart:68:20)
+#13     Loader.load (package:yaml/src/loader.dart:60:20)
+#14     loadYamlDocument (package:yaml/yaml.dart:72:25)
+#15     loadYamlNode (package:yaml/yaml.dart:57:5)
+#16     loadYaml (package:yaml/yaml.dart:44:5)
+#17     FlutterManifest.createFromString (package:flutter_tools/src/flutter_manifest.dart:45:28)
+#18     FlutterManifest.createFromPath (package:flutter_tools/src/flutter_manifest.dart:39:28)
+#19     ManifestAssetBundle.build (package:flutter_tools/src/asset.dart:304:73)
+<asynchronous suspension>
+#20     copyAssets (package:flutter_tools/src/build_system/targets/assets.dart:56:26)
+<asynchronous suspension>
+#21     AndroidAssetBundle.build (package:flutter_tools/src/build_system/targets/android.dart:65:34)
+<asynchronous suspension>
+#22     _BuildInstance._invokeInternal (package:flutter_tools/src/build_system/build_system.dart:847:9)
+<asynchronous suspension>
+#23     FlutterBuildSystem.build (package:flutter_tools/src/build_system/build_system.dart:614:16)
+<asynchronous suspension>
+#24     AssembleCommand.runCommand (package:flutter_tools/src/commands/assemble.dart:315:32)
+<asynchronous suspension>
+#25     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1336:27)
+<asynchronous suspension>
+#26     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#27     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#28     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:296:9)
+<asynchronous suspension>
+#29     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#30     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:244:5)
+<asynchronous suspension>
+#31     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:91:9)
+<asynchronous suspension>
+#32     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#33     main (package:flutter_tools/executable.dart:91:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.10.1, on Microsoft Windows [Version 10.0.19045.3086], locale en-US)
+    • Flutter version 3.10.1 on channel stable at G:\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision d3d8effc68 (8 weeks ago), 2023-05-16 17:59:05 -0700
+    • Engine revision b4fb11214d
+    • Dart version 3.0.1
+    • DevTools version 2.23.1
+
+[✓] Windows Version (Installed version of Windows is version 10 or higher)
+
+[!] Android toolchain - develop for Android devices (Android SDK version 33.0.2)
+    • Android SDK at E:\AndroidSoftware\sdk\sdk
+    • Platform android-33, build-tools 33.0.2
+    • ANDROID_HOME = E:\AndroidSoftware\sdk\sdk
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 11.0.10+0-b96-7249189)
+    ! Some Android licenses not accepted. To resolve this, run: flutter doctor --android-licenses
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✗] Visual Studio - develop for Windows
+    ✗ Visual Studio not installed; this is necessary for Windows development.
+      Download at https://visualstudio.microsoft.com/downloads/.
+      Please install the "Desktop development with C++" workload, including all of its default components
+
+[✓] Android Studio (version 2020.3)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.10+0-b96-7249189)
+
+[✓] Connected device (4 available)
+    • SM M022G (mobile) • R58R31GC46Y • android-arm    • Android 11 (API 30)
+    • Windows (desktop) • windows     • windows-x64    • Microsoft Windows [Version 10.0.19045.3086]
+    • Chrome (web)      • chrome      • web-javascript • Google Chrome 114.0.5735.199
+    • Edge (web)        • edge        • web-javascript • Microsoft Edge 114.0.1823.67
+
+[✓] Network resources
+    • All expected network resources are available.
+
+! Doctor found issues in 2 categories.
+```
